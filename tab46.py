@@ -7,18 +7,15 @@ import datetime
 # Импортируем собсвтенный модуль для работы с файлами
 import file_management
 
+# Получаем текущий год
+current_year = datetime.datetime.now().year
 
 
+class Tab46_2_Years:
+    """Класс для анализа текущего и прошлого года"""
+    def __init__(self):
+        file_path_1 = input(f'Введите путь к файлу {current_year} года: ')
+        file_path_2 = input(f'Введите путь к файлу {current_year - 1} года: ')
 
-# document_1 = input('Укажите ')
-# docx = docx.Document('Tab46.docx')
-
-
-
-if __name__ == '__main__':
-    # print(f"Текущая рабочая директория {path}")
-    print()
-    # print(docx.tables[0].rows[5].cells[0].text)
-    file_path = file_management.File(name='Tab46.docx',
-                                     path='C:/Users/panchous/Desktop/home/data_python/2020/09_2020/ur')
-    print(file_path)
+        self.file_1 = file_management.File(name='Tab46.docx', path=file_path_1)
+        self.file_2 = file_management.File(name='Tab46.docx', path=file_path_2)
