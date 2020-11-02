@@ -2,14 +2,12 @@
 import datetime
 # Импортируем собсвтенный модуль для работы с файлами
 import file_management
-# Библиотека для работы с документами .docx
 
 
 print('*** АНАЛИЗ ФАЙЛОВ СТАТИСТИКИ ИЦ ***\n\n'
       'Меню Программы:\n'
       '\t1. Tab46\n'
-      '\t2. ...\n'
-      '')
+      '\t2. ...\n')
 
 
 # Выбираем пункт меню, можно только цифры
@@ -38,11 +36,16 @@ while count_year < 2 or count_year > 5:
 if user_selection == 1:
     # Если выбрано 2 года для анализа:
     if count_year == 2:
-        print(f'\nВы выбрали № 1 в меню и 2 года для анализа\n'
-              f'Если текущий годе не {current_year}, то поменяйте насйтроки в ОС')
+        print(f'\nВы выбрали № 1 в меню и 2 года для анализа\n')
+
+        file_path_1 = input(f'Введите путь к файлу {current_year} года: ')
+        file_path_2 = input(f'Введите путь к файлу {current_year - 1} года: ')
 
         file_1 = file_management.File(name='Tab46.docx',
-                                      path='C:/Users/panchous/Desktop/home/data_python/2020/09_2020/ur')
+                                      path=file_path_1)
         file_2 = file_management.File(name='Tab46.docx',
-                                      path='C:/Users/panchous/Desktop/home/data_python/2019/09_2020/ur')
-        print(file_1, file_2)
+                                      path=file_path_2)
+        print(file_1.document.tables[0].rows[5].cells[0].text)
+        print(file_2.document.tables[0].rows[5].cells[0].text)
+
+# C:\Users\panchous\Desktop\home\data_python\2019\09_2019\ur
