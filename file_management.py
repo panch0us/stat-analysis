@@ -6,4 +6,5 @@ class File:
         self.path = path
 
     def __repr__(self):
-        return f"Имя файла:\t\t{self.name}\nПуть к файлу:\t{self.path}"
+        return f"Имя файла:\t\t{self.name}\n" \
+               f"Путь к файлу:\t{self.path}\n"
