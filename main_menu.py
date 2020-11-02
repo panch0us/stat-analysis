@@ -1,7 +1,8 @@
 # Библотека для работы с датой
 import datetime
-# Импортируем собсвтенный модуль для работы с файлами
-import file_management
+# Импортируем собсвтенный модуль для работы с файлом Tab46.docx
+import tab46
+
 
 
 print('*** АНАЛИЗ ФАЙЛОВ СТАТИСТИКИ ИЦ ***\n\n'
@@ -17,8 +18,6 @@ while user_selection < 1:
         user_selection = int(input('Введите номер файла для анализа: '))
     except ValueError:
         print('Можно ввести только число!')
-
-# Выбираем количество лет для сравнения
 
 # Получаем текущий год
 current_year = datetime.datetime.now().year
@@ -38,14 +37,8 @@ if user_selection == 1:
     if count_year == 2:
         print(f'\nВы выбрали № 1 в меню и 2 года для анализа\n')
 
-        file_path_1 = input(f'Введите путь к файлу {current_year} года: ')
-        file_path_2 = input(f'Введите путь к файлу {current_year - 1} года: ')
-
-        file_1 = file_management.File(name='Tab46.docx',
-                                      path=file_path_1)
-        file_2 = file_management.File(name='Tab46.docx',
-                                      path=file_path_2)
-        print(file_1.document.tables[0].rows[5].cells[0].text)
-        print(file_2.document.tables[0].rows[5].cells[0].text)
+        # Вызываем класс из модуля tab46.py
+        tab46.Tab46_2_Years()
 
 # C:\Users\panchous\Desktop\home\data_python\2019\09_2019\ur
+# print(file_2.document.tables[0].rows[5].cells[0].text)
