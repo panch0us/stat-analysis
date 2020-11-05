@@ -4,7 +4,6 @@ import datetime
 import tab46
 
 
-
 print('*** АНАЛИЗ ФАЙЛОВ СТАТИСТИКИ ИЦ ***\n\n'
       'Меню Программы:\n'
       '\t1. Tab46\n'
@@ -37,8 +36,9 @@ if user_selection == 1:
     if count_year == 2:
         print(f'\nВы выбрали № 1 в меню и 2 года для анализа\n')
 
-        # Вызываем класс из модуля tab46.py
+        # Вызываем класс для обработки двух лет из модуля tab46.py
         tab46.Tab46_2_Years()
 
+
 # C:\Users\panchous\Desktop\home\data_python\2019\09_2019\ur
-# print(file_2.document.tables[0].rows[5].cells[0].text)
+# C:\Users\panchous\Desktop\home\data_python\2020\09_2020\ur
