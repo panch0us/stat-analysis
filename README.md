@@ -1,4 +1,4 @@
-# Statistics analysis
+# stat-analysis (statistics analysis)
 Анализ статистики ИЦ.
 
 Состоит из:
